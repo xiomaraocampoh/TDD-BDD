@@ -4,7 +4,7 @@ from pytest_bdd import scenarios, given, when, then, parsers
 from src.carrito.carrito import Carrito
 from src.carrito.modelos import Producto
 
-scenarios('features/carrito.feature')
+scenarios('carrito.feature')
 
 @pytest.fixture
 def carrito():
@@ -28,7 +28,7 @@ def verificar_eliminacion(carrito, nombre):
 def carrito_vacio(carrito):
     carrito.items.clear()
 
-@given(parsers.parse('agrego {cantidad} "{nombre}" a {precio} cada uno'))
+@given(('agrego {cantidad} "{nombre}" a {precio} cada uno'))
 def agregar_producto(carrito, cantidad, nombre, precio):
     producto = Producto(nombre=nombre, precio_unitario=float(precio), cantidad=int(cantidad))
     carrito.agregar(producto)

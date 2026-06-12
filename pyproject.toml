@@ -9,8 +9,14 @@ dependencies = [
     "pytest-bdd>=8.1.0",
 ]
 
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
 [dependency-groups]
 dev = [
+    "locust>=2.44.0",
     "pytest>=9.0.3",
+    "pytest-bdd>=8.1.0",
     "pytest-html>=4.2.0",
 ]

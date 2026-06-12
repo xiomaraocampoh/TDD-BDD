@@ -20,5 +20,4 @@ class Carrito:
         return total
     
     def vaciar(self):
-        # Rf, 7
         self.items.clear()
